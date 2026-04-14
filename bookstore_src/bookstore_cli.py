@@ -13,7 +13,7 @@ def pause() -> None:
 
 def print_menu() -> None:
     print_divider()
-    print("Bookstore Menu")
+    print("History Bookstore Menu")
     print("1. View all categories")
     print("2. View all books")
     print("3. View books in a category")
@@ -26,8 +26,8 @@ def print_menu() -> None:
 
 def welcome_screen() -> None:
     print_divider()
-    print("Welcome to the Bookstore CLI")
-    print("Use the menu to browse and manage your books.")
+    print("Welcome to the History Bookstore CLI")
+    print("Explore the past through our collection of history books.")
     pause()
 
 
