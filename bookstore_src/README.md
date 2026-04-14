@@ -1,6 +1,6 @@
 # History Bookstore Database + Python CLI
 
-This example creates a history-themed bookstore database in SQLite and then uses Python to interact with it through a command-line interface.
+The codes create a history-themed bookstore database in SQLite and then uses Python to interact with it through a command-line interface.
 
 ## Files
 
