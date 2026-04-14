@@ -1,17 +1,30 @@
 PRAGMA foreign_keys = ON;
 
+-- Insert categories of History Books
 INSERT INTO category (categoryId, categoryName, categoryImage) VALUES
-(1, 'Biographies', 'biographies-category.jpg'),
-(2, 'Learn to Play', 'learn-to-play-category.jpg'),
-(3, 'Music Theory', 'music-theory-category.jpg'),
-(4, 'Scores and Collections', 'scores-and-collections-category.jpg');
+(1, 'World History', 'world-history-category.jpg'),
+(2, 'Military History', 'military-history-category.jpg'),
+(3, 'Historical Biographies', 'biographies-category.jpg'),
+(4, 'Ancient Civilizations', 'ancient-civilizations-category.jpg');
 
+-- Insert books (12 books with 3 for each category)
 INSERT INTO book (bookId, categoryId, title, author, isbn, price, image, readNow) VALUES
-(1, 1, 'Beethoven: Anguish and Triumph', 'Jan Swafford', '9780618054749', 24.99, 'beethoven.gif', 1),
-(2, 1, 'Lady Gaga: Applause', 'Annie Zaleski', '9781250203564', 19.99, 'madonna.jpg', 0),
-(3, 1, 'Duke: A Life of Duke Ellington', 'Terry Teachout', '9781594036682', 21.99, 'ellington.jpg', 0),
-(4, 1, 'Clapton: The Autobiography', 'Eric Clapton', '9780767920551', 18.99, 'clapton.jpg', 0),
-(5, 2, 'Hal Leonard Guitar Method Book 1', 'Will Schmid', '9780793523054', 14.99, 'guitar.jpg', 1),
-(6, 2, 'Alfred''s Basic Adult Piano Course Lesson Book 1', 'Willard A. Palmer', '9780882846163', 16.99, 'piano.jpg', 1),
-(7, 3, 'Music Theory for Dummies', 'Michael Pilhofer', '9781119575528', 22.99, 'theory.jpg', 1),
-(8, 4, 'The Real Book: Volume I (C Edition)', 'Hal Leonard Corp.', '9780634060380', 39.99, 'scores.jpg', 0);
+-- World History
+(1, 1, 'Sapiens: A Brief History of Humankind', 'Yuval Noah Harari', '9780062316097', 22.99, 'sapiens.jpg', 1),
+(2, 1, 'Guns, Germs, and Steel', 'Jared Diamond', '9780393354324', 18.99, 'guns-germs-steel.jpg', 0),
+(3, 1, 'A People''s History of the United States', 'Howard Zinn', '9780062397348', 19.99, 'peoples-history.jpg', 1),
+
+-- Military History
+(4, 2, 'The Art of War', 'Sun Tzu', '9781590302255', 9.99, 'art-of-war.jpg', 1),
+(5, 2, 'Band of Brothers', 'Stephen E. Ambrose', '9780743224543', 16.99, 'band-of-brothers.jpg', 0),
+(6, 2, 'The Guns of August', 'Barbara W. Tuchman', '9780345476098', 17.99, 'guns-of-august.jpg', 1),
+
+-- Historical Biographies
+(7, 3, 'Alexander Hamilton', 'Ron Chernow', '9780143034759', 21.99, 'alexander-hamilton.jpg', 1),
+(8, 3, 'Team of Rivals: The Political Genius of Abraham Lincoln', 'Doris Kearns Goodwin', '9780743270755', 24.99, 'team-of-rivals.jpg', 0),
+(9, 3, 'The Diary of a Young Girl', 'Anne Frank', '9780553577129', 12.99, 'anne-frank.jpg', 1),
+
+-- Ancient Civilizations
+(10, 4, 'SPQR: A History of Ancient Rome', 'Mary Beard', '9781631492228', 19.99, 'spqr.jpg', 1),
+(11, 4, 'The Rise and Fall of Ancient Egypt', 'Toby Wilkinson', '9780553384901', 18.99, 'ancient-egypt.jpg', 0),
+(12, 4, '1177 B.C.: The Year Civilization Collapsed', 'Eric H. Cline', '9780691168388', 16.99, '1177-bc.jpg', 1);
