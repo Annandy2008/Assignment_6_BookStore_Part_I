@@ -13,15 +13,16 @@ def pause() -> None:
 
 def print_menu() -> None:
     print_divider()
-    print("History Bookstore Menu")
+    print(" History Bookstore Menu")
     print("1. View all categories")
     print("2. View all books")
     print("3. View books in a category")
     print("4. Search books by title")
-    print("5. Add a new book")
-    print("6. Update a book price")
-    print("7. Delete a book")
-    print("8. Quit")
+    print("5. Search books by price range")
+    print("6. Add a new book")
+    print("7. Update a book price")
+    print("8. Delete a book")
+    print("9. Quit")
 
 
 def welcome_screen() -> None:
@@ -184,7 +185,35 @@ def delete_book(cursor: sqlite3.Cursor) -> None:
     except ValueError:
         print_divider()
         print("Invalid input.")
+        
+def search_by_price_range(cursor: sqlite3.Cursor) -> None:
+    try:
+        min_price = float(input("Enter minimum price: $").strip())
+        max_price = float(input("Enter maximum price: $").strip())
 
+        cursor.execute(
+            """
+            SELECT bookId, title, author, price
+            FROM book
+            WHERE price BETWEEN ? AND ?
+            ORDER BY price
+            """,
+            (min_price, max_price)
+        )
+        rows = cursor.fetchall()
+
+        print_divider()
+        print(f"Books between ${min_price:.2f} and ${max_price:.2f}")
+
+        if rows:
+            for row in rows:
+                print(f"ID: {row[0]} | {row[1]} by {row[2]} | ${row[3]:.2f}")
+        else:
+            print("No books found in this price range.")
+
+    except ValueError:
+        print_divider()
+        print("Invalid input. Please enter numbers.")
 
 def main() -> None:
     with sqlite3.connect(DB_NAME) as connection:
@@ -209,15 +238,18 @@ def main() -> None:
                 search_by_title(cursor)
                 pause()
             elif choice == "5":
-                add_book(cursor)
+                search_by_price_range(cursor)
                 pause()
             elif choice == "6":
-                update_price(cursor)
+                add_book(cursor)
                 pause()
             elif choice == "7":
-                delete_book(cursor)
+                update_price(cursor)
                 pause()
             elif choice == "8":
+                delete_book(cursor)
+                pause()
+            elif choice == "9":
                 print_divider()
                 print("Goodbye!")
                 break
