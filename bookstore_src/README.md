@@ -32,5 +32,5 @@ Run these commands in the terminal:
 # Create empty database file
 python3 - <<'PY'
 import sqlite3
-sqlite3.connect('bookstore.db').close()
+sqlite3.connect('history_bookstore.db').close()
 PY
