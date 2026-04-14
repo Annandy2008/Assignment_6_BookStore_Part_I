@@ -1,8 +1,9 @@
-# Homework 1 Example Repo - Bookstore Database + Python CLI
+#  Assignment 6 - History Bookstore Database + Python CLI
 
 **Author:** Yicheng Song
 
-This example creates a history-themed bookstore database in SQLite and then uses Python to interact with it through a command-line interface.
+This project creates a history-themed bookstore database in SQLite and then uses Python to interact with it through a command-line interface. The database includes books across World History, Military History, Historical Biographies, and Ancient Civilizations.
+
 
 ## Files
 
