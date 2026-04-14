@@ -1,15 +1,15 @@
-# 📜 History Bookstore Database + Python CLI
+# History Bookstore Database + Python CLI
 
 This example creates a history-themed bookstore database in SQLite and then uses Python to interact with it through a command-line interface.
 
-## 📁 Files
+## Files
 
 - `createTables.sql` - creates the category and book tables
 - `insertRows.sql` - inserts sample categories and history books
 - `bookstore_cli.py` - Python CRUD program with interactive menu
 - `bookstore.db` - database file you will create by running the commands below
 
-## 🗄️ Database Schema
+## Database Schema
 
 ### Category Table
 - `categoryId` (PRIMARY KEY)
@@ -24,7 +24,7 @@ This example creates a history-themed bookstore database in SQLite and then uses
 - `image` (filename only)
 - `readNow` (0 or 1)
 
-## 🚀 Create the database
+## Create the database
 
 Run these commands in the terminal:
 
