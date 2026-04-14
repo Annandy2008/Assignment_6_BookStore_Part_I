@@ -1,6 +1,6 @@
 import sqlite3
 
-DB_NAME = "bookstore.db"
+DB_NAME = "history_bookstore.db"
 
 
 def print_divider() -> None:
